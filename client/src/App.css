@@ -1,0 +1,71 @@
+.Home {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightgray;
+  text-align: center;
+  height: 250px;
+  padding: 30px;
+  vertical-align: middle;
+}
+
+.Card img,
+h1 {
+  cursor: pointer;
+}
+
+.Main {
+  width: 60%;
+  margin: 0;
+  text-align: center;
+  background-color: lightgray;
+  padding: 10px;
+}
+.Flight {
+  display: flex;
+  width: 80%;
+  height: fit-content;
+  margin: auto;
+  margin-top: 6%;
+}
+.spinner {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+
+.Comment {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  padding: 20px;
+  /* overflow: scroll; */
+  background-color: lightgreen;
+  text-align: left;
+}
+
+.Comment button {
+  border: none;
+  border-radius: 3px;
+  width: 30%;
+  background-color: lightskyblue;
+  cursor: pointer;
+}
+.Comment input {
+  margin: 10px 0;
+}
+
+.Comment button:hover {
+  background-color: lightslategray;
+}
+
+.Card a {
+  text-decoration: none;
+  color: gray;
+}
