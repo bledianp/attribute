@@ -5,7 +5,7 @@ import Card from "./Card";
 const Home = () => {
   const [data] = useFetch("https://api.spacexdata.com/v3/launches");
 
-  console.log(data);
+  //console.log(data);
   return (
     <div className="Home">
       {data.length !== 0 ? (
