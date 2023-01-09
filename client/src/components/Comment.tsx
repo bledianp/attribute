@@ -1,28 +1,42 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import useFetch from "../hooks/useFetch";
 
-const Comment = () => {
+const Comment = ({ id }: any) => {
   const [comment, setComment] = useState("");
+  const [data, setData] = useState([]);
 
-  const [data] = useFetch("http://localhost:3001/read");
+  const getData = () => {
+    const options = {
+      method: "GET",
+      url: "http://localhost:3001/read",
+      params: { number: +id },
+    };
 
-  // console.log(data);
+    Axios.request(options)
+      .then((response) => {
+        // console.log(response.data)
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  getData();
 
   const addComment = () => {
-    // console.log(comment);
-
     Axios.post(`http://localhost:3001/insert`, {
+      number: +id,
       comment: comment,
     });
-    
+
+    getData();
+
     setComment("");
-    
   };
 
   return (
     <div className="Comment">
-      
       <label>Comment: </label>
       <input
         type="text"
@@ -39,3 +53,4 @@ const Comment = () => {
 };
 
 export default Comment;
+
