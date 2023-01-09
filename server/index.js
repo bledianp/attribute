@@ -17,7 +17,8 @@ mongoose.connect(
 
 app.post("/insert", async (req, res) => {
   const text = req.body.comment;
-  const comment = new CommentModel({ comment: text });
+  const number = req.body.number;
+  const comment = new CommentModel({ number: number, comment: text });
 
   try {
     await comment.save();
@@ -28,7 +29,8 @@ app.post("/insert", async (req, res) => {
 });
 
 app.get("/read", async (req, res) => {
-  CommentModel.find({}, (err, result) => {
+  const number = req.query.number;
+  CommentModel.find({ number: number }, (err, result) => {
     if (err) {
       res.send(err);
     }
@@ -40,3 +42,4 @@ app.get("/read", async (req, res) => {
 app.listen(3001, () => {
   console.log("Server is running on port 3001...");
 });
+
