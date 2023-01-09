@@ -12,6 +12,7 @@ const Home = () => {
         data.map((item: any, index: number) => {
           return (
             <Card
+              key={index}
               id={item.flight_number}
               name={item.mission_name}
               image={item.links.mission_patch_small}
