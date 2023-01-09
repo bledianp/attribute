@@ -4,7 +4,8 @@ import Comment from "./Comment";
 
 const Flight = () => {
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
+  
   const [data] = useFetch(`https://api.spacexdata.com/v3/launches/${id}`);
 
   // console.log(data.length);
@@ -29,7 +30,7 @@ const Flight = () => {
               </a>
             </p>
           </div>
-          <Comment />
+          <Comment id={id} />
         </div>
       )}
     </>
