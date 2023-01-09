@@ -21,7 +21,7 @@ h1 {
 }
 
 .Main {
-  width: 60%;
+  width: 70%;
   margin: 0;
   text-align: center;
   background-color: lightgray;
@@ -30,9 +30,9 @@ h1 {
 .Flight {
   display: flex;
   width: 80%;
-  height: fit-content;
   margin: auto;
   margin-top: 6%;
+  margin-bottom: 6%;
 }
 .spinner {
   position: absolute;
@@ -41,11 +41,10 @@ h1 {
 }
 
 .Comment {
+  width: 30%;
   display: flex;
   flex-direction: column;
-  height: 70vh;
   padding: 20px;
-  /* overflow: scroll; */
   background-color: lightgreen;
   text-align: left;
 }
@@ -68,4 +67,26 @@ h1 {
 .Card a {
   text-decoration: none;
   color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+  .Flight {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  .Main {
+    width: 100%;
+    margin: 0;
+  }
+
+  .Comment {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    align-items: center;
+    padding-top: 10px;
+  }
 }
