@@ -35,19 +35,32 @@ const Comment = ({ id }: any) => {
     setComment("");
   };
 
+  const handleKeyPress = (e:any) =>{
+    if(e.keyCode == 13){
+      addComment();
+    }
+  }
+
   return (
     <div className="Comment">
+
       <label>Comment: </label>
+
       <input
         type="text"
         value={comment}
-        onChange={(event) => setComment(event.target.value)}
+        onKeyDown={handleKeyPress}
+        onChange={(e) => setComment(e.target.value)}
       />
+
       <button onClick={addComment}>Add</button>
+
       <h1>Comments</h1>
+
       {data.map((item: any, index: number) => {
         return <p key={index}>{item.comment}</p>;
       })}
+      
     </div>
   );
 };
