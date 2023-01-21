@@ -1,4 +1,4 @@
-# attribute
+# attributy
 
 To run this project you have to install all necessary packeges, starting from the client with command npm install,
 also the server side you have to install packages with command npm install.
